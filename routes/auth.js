@@ -11,7 +11,7 @@ const {
 // REGISTRATION
 router.post("/register", async (req, res) => {
     const newUser = new User({
-        name: req.body.name,
+        username: req.body.username,
         email: req.body.email,
         password: CryptoJS.AES.encrypt(req.body.password, process.env.PASS_SEC).toString(),
         isAdmin: req.body.isAdmin || false, // Set isAdmin to true if provided, otherwise default to false
